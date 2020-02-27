@@ -30,14 +30,14 @@ public class MainActivity extends AppCompatActivity {
 
         relativeLayout = findViewById(R.id.relativelayout1);
 
-        DayThemeMode();
+        NightThemeMode();
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
 
             @Override
             public void run() {
-                NightThemeMode();
+                DayThemeMode();
 
                 handler.postDelayed(this, 10000);
             }
@@ -73,10 +73,11 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
 
                 imageView.setVisibility(View.INVISIBLE);
+                NightThemeMode();
 
             }
         };
-        handler.postDelayed(runnable, 2500);
+        handler.postDelayed(runnable, 3500);
     }
 
     public void NightThemeMode(){
@@ -105,11 +106,9 @@ public class MainActivity extends AppCompatActivity {
 
                 imageView.setVisibility(View.INVISIBLE);
 
-                DayThemeMode();
-
 
             }
         };
-        handler.postDelayed(runnable, 3500);
+        handler.postDelayed(runnable, 2500);
     }
 }
